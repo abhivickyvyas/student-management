@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: student-management
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/student_management_db
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+
+  ai:
+    mcp:
+      server:
+        name: student-management-mcp-server
+        version: 1.0.0
+        protocol: streamable
+
+  mvc:
+    throw-exception-if-no-handler-found: true
+    static-path-pattern: /static/**
+
+server:
+  port: 8080
+  error:
+    include-message: always
+    include-stacktrace: never
+
+logging:
+  level:
+    root: WARN
+    com.demo.studentmanagement: DEBUG
+    org.springframework.web: INFO
