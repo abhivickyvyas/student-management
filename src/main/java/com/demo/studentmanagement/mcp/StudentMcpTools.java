@@ -42,8 +42,7 @@ public class StudentMcpTools {
   }
 
   @Tool(description = "Get a student by their ID")
-  public StudentResponse get_student(
-      @ToolParam(description = "The student's unique ID") Long id) {
+  public StudentResponse get_student(@ToolParam(description = "The student's unique ID") Long id) {
     return studentService.getStudent(id);
   }
 
@@ -83,8 +82,7 @@ public class StudentMcpTools {
   }
 
   @Tool(description = "Delete a student by their ID")
-  public String delete_student(
-      @ToolParam(description = "The student's unique ID") Long id) {
+  public String delete_student(@ToolParam(description = "The student's unique ID") Long id) {
     studentService.deleteStudent(id);
     return "Student with id " + id + " has been deleted successfully.";
   }
